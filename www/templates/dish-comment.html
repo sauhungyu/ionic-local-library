@@ -1,0 +1,32 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">comment</h1>
+    <div class="buttons">
+      <button class="button button-balanced" ng-click="closeAddComment()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doAddComment()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="commentData.author">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Rating</span>
+            <select ng-model="commentData.rating">
+            <option ng-repeat="n in [1,2,3,4,5]" value="{{n}}">{{n}}</option>
+          </select>
+          <input type="text" ng-model="commentData.rating">
+        </label>
+		<label class="item item-input">
+          <span class="input-label">Comment</span>
+          <input type="text" ng-model="commentData.comment">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Submit Comment</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
